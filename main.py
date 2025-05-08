@@ -26,8 +26,8 @@ with gr.Blocks(title="Audio Transcription Tool", theme=gr.themes.Soft()) as demo
                 sources=["upload", "microphone"],
             )
             with gr.Row():
+                clear_button = gr.ClearButton(components=[audio_input], variant="stop")
                 transcribe_button = gr.Button("Transcribe Audio", variant="primary")
-                clear_button = gr.ClearButton(components=[audio_input])
 
         with gr.Column():
             output_text = gr.Textbox(
